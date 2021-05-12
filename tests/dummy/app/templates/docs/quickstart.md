@@ -45,7 +45,7 @@ AddonDocs uses your addon's dummy application, which is a full-fledged Ember app
 So let's start with the application template:
 
 {{#docs-snippet name="quickstart-application.hbs" title="tests/dummy/app/templates/application.hbs"}}
-  {{docs-header}}
+  <DocsHeader />
 
   {{outlet}}
 {{/docs-snippet}}
@@ -59,14 +59,14 @@ At this point, fire up `ember s` and you should see your new docs site & header 
 AddonDocs comes with some components to help you showcase your addon. Let's add them to your dummy app's index template:
 
 {{#docs-snippet name="quickstart-marketing-index.hbs" title="tests/dummy/app/templates/index.hbs"}}
-  {{docs-hero}}
+  <DocsHero />
 
   <div style="max-width: 40rem; margin: 0 auto; padding: 0 1.5rem">
-    {{#docs-demo as |demo|}}
-      {{#demo.example name="my-demo.hbs"}}
+    <DocsDemo as |demo|>
+      <demo.example @name="my-demo.hbs">
         <p>Make sure to read up on the DocsDemo component before building out this page.</p>
-      {{/demo.example}}
-    {{/docs-demo}}
+      </demo.example>
+    </DocsDemo>
   </div>
 
 {{/docs-snippet}}
@@ -81,15 +81,15 @@ AddonDocs is unopinionated about how you style your application, so you can use 
 The `docs` route is the entry point for your guides and API docs. Create a new `docs.hbs` file for the `docs` route and add the `<DocsViewer />` component:
 
 {{#docs-snippet name="quickstart-skeleton.hbs" language="htmlbars" title="tests/dummy/app/templates/docs.hbs"}}
-  {{#docs-viewer as |viewer|}}
-    {{#viewer.nav as |nav|}}
-      {{nav.section "Introduction"}}
-    {{/viewer.nav}}
+  <DocsViewer as |viewer|>
+    <viewer.nav as |nav|>
+      <nav.section @name="Introduction" />
+    </viewer.nav>
 
-    {{#viewer.main}}
+    <viewer.main>
       {{outlet}}
-    {{/viewer.main}}
-  {{/docs-viewer}}
+    </viewer.main>
+  </DocsViewer>
 {{/docs-snippet}}
 
 If you visit `/docs` or click the Documentation link in the header, you should see the viewer's nav on the left-hand side and an area in the center where your guides content will go.

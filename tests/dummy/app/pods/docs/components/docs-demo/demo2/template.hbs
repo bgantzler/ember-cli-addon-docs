@@ -1,20 +1,20 @@
-{{#docs-demo as |demo|}}
-  {{#demo.example data-test-id="docs-demo-multiple.hbs"}}
+<DocsDemo as |demo|>
+  <demo.example data-test-id="docs-demo-multiple.hbs">
     {{!-- BEGIN-SNIPPET docs-demo-multiple.hbs --}}
     <button onclick={{action "toggleIsShowing"}} class="docs-btn">
       Press me!
     </button>
 
     <p class="docs-mt-4">
-      {{#if isShowing}}
+      {{#if this.isShowing}}
         Yep
       {{else}}
         Nope
       {{/if}}
     </p>
     {{!-- END-SNIPPET --}}
-  {{/demo.example}}
+  </demo.example>
 
-  {{demo.snippet "docs-demo-multiple.hbs"}}
-  {{demo.snippet "docs-demo-multiple.js" label="component.js"}}
-{{/docs-demo}}
+  <demo.snippet @name="docs-demo-multiple.hbs" />
+  <demo.snippet @name="docs-demo-multiple.js" @label="component.js" />
+</DocsDemo>

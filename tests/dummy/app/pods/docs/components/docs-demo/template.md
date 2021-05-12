@@ -23,10 +23,10 @@ Here's the code that rendered the above demo (you can copy-paste this block to g
 
 To explain,
 
-- `{{docs-demo}}` is the wrapping component
-- The contextual component `{{#demo.example}}{{/demo.example}}` provides a wrapper to display your example. You'll pass a block to this component with the actual code you're demoing - for example, showing off how to use your button.
-- You also need to pass a `name=` to demo.example in order to identify your snippet.
-- Finally, the `{{demo.snippet}}` component lets you render different named snippets that you've identified via demo.example wrappers or other code comment blocks in your source.
+- `<DocsDemo>` is the wrapping component
+- The contextual component `<demo.example></demo.example>` provides a wrapper to display your example. You'll pass a block to this component with the actual code you're demoing - for example, showing off how to use your button.
+- You also need to pass a `@name=` to demo.example in order to identify your snippet.
+- Finally, the `<demo.snippet>` component lets you render different named snippets that you've identified via demo.example wrappers or other code comment blocks in your source.
 
 ## Multiple snippets
 
